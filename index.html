@@ -403,16 +403,6 @@
         
           <h3 id="IE关于兼容性的坑"><a href="#IE关于兼容性的坑" class="headerlink" title="IE关于兼容性的坑"></a>IE关于兼容性的坑</h3><p>公司最近在完成一个关于React的项目，需求是必须兼容IE9，可是当项目在<code>chrome</code>下跑的妥妥的时候，扔到了<code>IE</code>下，<code>IE7</code>白屏，<code>IE8</code>白屏，<code>IE9</code>还是白屏这叫做一个崩溃…，最后还是耐心的打开控制台看看，发现控制台报了一个错误<br><code>SCRIPT5022: matchMedia not present, legacy browsers require a polyfill</code>，如下图：<br><img src="/2017/07/10/window-btoa/error-1.png" alt="报错内容"></p>
 <p>这里浏览器是告诉我们<code>matchMedia</code>不存在，并且需要一个<code>polyfill</code>这个东西，目前我们知道了问题出在哪里了，那就开始解决问题吧。</p>
-<h3 id="matchMedia是什么"><a href="#matchMedia是什么" class="headerlink" title="matchMedia是什么"></a>matchMedia是什么</h3><ol>
-<li>我们先了解一下<code>matchMedia</code>是什么吧<br><code>matchMedia</code>或者<code>window.matchMedia</code>, 返回<code>MediaQueryList</code>表示指定的媒体查询字符串的解析结果的新对象。我们在看看它的兼容性:</li>
-</ol>
-<p><img src="/2017/07/10/window-btoa/img-1.png" alt="matchMedia的兼容行"></p>
-<p>没错，只兼容到<code>IE10</code>,所以<code>IE9</code>不行，更别说<code>8、7...</code>等更低版本的浏览器了</p>
-<ol>
-<li>现在知道了matchMedia是什么了，那个这个问题要怎么解决呢？其实很简单，你只需要在你页面的最开始引入这段代码</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>或者你也可以在浏览器中输入这个地址，将其以文件的形式保存下来，并在文件的最开始处引入即可。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/10/window-btoa/#more" rel="contents">
