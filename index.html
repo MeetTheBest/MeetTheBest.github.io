@@ -401,8 +401,7 @@
 
       
         
-          
-            <h3 id="IE关于兼容性的坑"><a href="#IE关于兼容性的坑" class="headerlink" title="IE关于兼容性的坑"></a>IE关于兼容性的坑</h3><p>公司最近在完成一个关于React的项目，需求是必须兼容IE9，可是当项目在<code>chrome</code>下跑的妥妥的时候，扔到了<code>IE</code>下，<code>IE7</code>白屏，<code>IE8</code>白屏，<code>IE9</code>还是白屏这叫做一个崩溃…，最后还是耐心的打开控制台看看，发现控制台报了一个错误<br><code>SCRIPT5022: matchMedia not present, legacy browsers require a polyfill</code>，如下图：<br><img src="/2017/07/10/window-btoa/error-1.png" alt="报错内容"></p>
+          <h3 id="IE关于兼容性的坑"><a href="#IE关于兼容性的坑" class="headerlink" title="IE关于兼容性的坑"></a>IE关于兼容性的坑</h3><p>公司最近在完成一个关于React的项目，需求是必须兼容IE9，可是当项目在<code>chrome</code>下跑的妥妥的时候，扔到了<code>IE</code>下，<code>IE7</code>白屏，<code>IE8</code>白屏，<code>IE9</code>还是白屏这叫做一个崩溃…，最后还是耐心的打开控制台看看，发现控制台报了一个错误<br><code>SCRIPT5022: matchMedia not present, legacy browsers require a polyfill</code>，如下图：<br><img src="/2017/07/10/window-btoa/error-1.png" alt="报错内容"></p>
 <p>这里浏览器是告诉我们<code>matchMedia</code>不存在，并且需要一个<code>polyfill</code>这个东西，目前我们知道了问题出在哪里了，那就开始解决问题吧。</p>
 <h3 id="matchMedia是什么"><a href="#matchMedia是什么" class="headerlink" title="matchMedia是什么"></a>matchMedia是什么</h3><ol>
 <li>我们先了解一下<code>matchMedia</code>是什么吧<br><code>matchMedia</code>或者<code>window.matchMedia</code>, 返回<code>MediaQueryList</code>表示指定的媒体查询字符串的解析结果的新对象。我们在看看它的兼容性:</li>
@@ -414,24 +413,13 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
 <p>或者你也可以在浏览器中输入这个地址，将其以文件的形式保存下来，并在文件的最开始处引入即可。</p>
-<h3 id="polyfill是什么"><a href="#polyfill是什么" class="headerlink" title="polyfill是什么"></a>polyfill是什么</h3><ol>
-<li>我们先了解一下<code>polyfill</code>是什么吧<br>简单来说<code>polyfill</code>是一个浏览器的兼容解决方法</li>
-</ol>
-<p>2.我们可以通过其所在的<code>github</code>仓库，来下载<code>polyfill.js</code>或者<code>polyfill.min.js</code>文件。</p>
-<p>一个题外话，如果觉得我只想要下载一两个文件，就要下载整个代码库，很不人性化，在这里我推荐一个<code>chrome</code>的扩展程序<code>Octotree</code>，至于安装和配置大家执行了解哈。安装之后<code>github</code>就可以长这样了，并且可以选择你想要的单个文件下来哦。</p>
-<p><img src="/2017/07/10/window-btoa/polyfill.png" alt="插件效果"></p>
-<h3 id="startsWith未定义"><a href="#startsWith未定义" class="headerlink" title="startsWith未定义"></a>startsWith未定义</h3><p>可能有些同学安装上面所描述的步骤完成了，但是在<code>IE</code>下发现还是打不开，这个时候你去控制台瞧瞧，出现了一个新的错的<br><code>startsWith</code>未定义。</p>
-<p><img src="/2017/07/10/window-btoa/startsWith.png" alt="startsWith未定义"></p>
-<p>这时候你需要做的是将这一段代码贴入文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  if (typeof String.prototype.startsWith != &apos;function&apos;) &#123;</div><div class="line">    String.prototype.startsWith = function (prefix) &#123;</div><div class="line">      return this.slice(0, prefix.length) === prefix;</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="btoa未定义"><a href="#btoa未定义" class="headerlink" title="btoa未定义"></a>btoa未定义</h3><p>也许你还可能发生这样的错误<code>btoa</code>未定义</p>
-<p><img src="/2017/07/10/window-btoa/error-btoa.png" alt="bota未定义"></p>
-<p>这时候你需要做的就是引入下面的这个文件：</p>
-<p><img src="/2017/07/10/window-btoa/base64.png" alt="base64定义文件"></p>
-<p><a href="https://github.com/davidchambers/Base64.js/blob/master/base64.js#L15" target="_blank" rel="external">Github</a></p>
-<h3 id="尾言"><a href="#尾言" class="headerlink" title="尾言"></a>尾言</h3><p>上诉情况是本人在<code>IE9</code>下所做的兼容性适应，如果你使用更低版本的浏览器，也许会出现更多的问题，需自行了解哈。</p>
-<p><code>startsWith</code>和<code>btoa</code>是<code>window</code>自带的方法(低版本浏览器不具有)，有需要的可以自行了解一下。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/10/window-btoa/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
