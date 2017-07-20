@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/07/10/window-btoa/startsWith.png">
 <meta property="og:image" content="http://yoursite.com/2017/07/10/window-btoa/error-btoa.png">
 <meta property="og:image" content="http://yoursite.com/2017/07/10/window-btoa/base64.png">
-<meta property="og:updated_time" content="2017-07-17T09:07:26.000Z">
+<meta property="og:updated_time" content="2017-07-20T01:55:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于低版本浏览器matchMedia、startsWith、btoa未定义的">
 <meta name="twitter:description" content="IE关于兼容性的坑公司最近在完成一个关于React的项目，需求是必须兼容IE9，可是当项目在chrome下跑的妥妥的时候，扔到了IE下，IE7白屏，IE8白屏，IE9还是白屏这叫做一个崩溃…，最后还是耐心的打开控制台看看，发现控制台报了一个错误SCRIPT5022: matchMedia not present, legacy browsers require a polyfill，如下图： 这里">
@@ -412,6 +412,7 @@
 <li>我们先了解一下<code>matchMedia</code>是什么吧<br><code>matchMedia</code>或者<code>window.matchMedia</code>, 返回<code>MediaQueryList</code>表示指定的媒体查询字符串的解析结果的新对象。我们在看看它的兼容性:</li>
 </ol>
 <p><img src="/2017/07/10/window-btoa/img-1.png" alt="matchMedia的兼容行"></p>
+<!-- more -->
 <p>没错，只兼容到<code>IE10</code>,所以<code>IE9</code>不行，更别说<code>8、7...</code>等更低版本的浏览器了</p>
 <ol>
 <li>现在知道了matchMedia是什么了，那个这个问题要怎么解决呢？其实很简单，你只需要在你页面的最开始引入这段代码</li>
