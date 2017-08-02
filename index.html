@@ -312,6 +312,387 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MeetTheBest">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MeetTheBest">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/02/mysql/" itemprop="url">Mysql常用操作命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T14:10:24+08:00">
+                2017-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="启动关闭MySQL服务"><a href="#启动关闭MySQL服务" class="headerlink" title="启动关闭MySQL服务"></a>启动关闭MySQL服务</h3><ol>
+<li>【开始菜单】搜索 services.msc 打开 windows【服务管理器】，可以在此开启关闭 MySQL 服务。</li>
+<li>在 cmd 中使用命令：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">net start mysql #启动服务</div><div class="line">net stop mysql #关闭服务</div></pre></td></tr></table></figure>
+<h3 id="数据库操作命令"><a href="#数据库操作命令" class="headerlink" title="数据库操作命令"></a>数据库操作命令</h3><h4 id="进入数据库命令行"><a href="#进入数据库命令行" class="headerlink" title="进入数据库命令行"></a>进入数据库命令行</h4><p><code>CMD:mysql -u root -p;</code><br><code>CMD:mysql -u root -p password;</code></p>
+<h4 id="退出数据库"><a href="#退出数据库" class="headerlink" title="退出数据库"></a>退出数据库</h4><p><code>exit</code></p>
+<h4 id="注意-标注"><a href="#注意-标注" class="headerlink" title="注意/标注"></a>注意/标注</h4><p><code>mysql</code>语句以<code>;</code>为结束语<br><code>[content]</code> 内容为可选填类型</p>
+<h3 id="数据库-增-删-改-查"><a href="#数据库-增-删-改-查" class="headerlink" title="数据库-增-删-改-查"></a>数据库-增-删-改-查</h3><h4 id="一-创建数据库"><a href="#一-创建数据库" class="headerlink" title="一. 创建数据库"></a>一. 创建数据库</h4><p><code>mysqladmin -u root -p create DB_NAME;</code> 本操作需在<code>root</code>权限下执行<br><code>create database db_name;</code> </p>
+<h4 id="二-删除数据库"><a href="#二-删除数据库" class="headerlink" title="二. 删除数据库"></a>二. 删除数据库</h4><p><code>mysqladmin -u root -p drop DB_NAME;</code> 本操作需在<code>root</code>权限下执行<br><code>drop database db_name;</code></p>
+<h4 id="三-选择数据库"><a href="#三-选择数据库" class="headerlink" title="三. 选择数据库"></a>三. 选择数据库</h4><p><code>use DB_NAME;</code></p>
+<h4 id="四-数据库查询操作"><a href="#四-数据库查询操作" class="headerlink" title="四. 数据库查询操作"></a>四. 数据库查询操作</h4><h4 id="查看mysql的性能及统计信息"><a href="#查看mysql的性能及统计信息" class="headerlink" title="查看mysql的性能及统计信息"></a>查看<code>mysql</code>的性能及统计信息</h4><p><code>SHOW TABLE STATUS  FROM DB_NAME;</code>  显示数据库为<code>DB_NAME</code>中所有表的信息<br><code>SHOW TABLE STATUS from DB_NAME LIKE &#39;express&#39;;</code> 显示数据库为<code>DB_NAME</code>且以<code>express</code>开头的表<br><code>SHOW TABLE STATUS from DB_NAME LIKE &#39;express&#39;\G;</code>  加上<code>\G</code>,查询结果按列打印</p>
+<h4 id="查看全部数据库"><a href="#查看全部数据库" class="headerlink" title="查看全部数据库"></a>查看全部数据库</h4><p><code>SHOW DATABASES;</code></p>
+<h4 id="查看当前所在数据库"><a href="#查看当前所在数据库" class="headerlink" title="查看当前所在数据库"></a>查看当前所在数据库</h4><ul>
+<li><code>SELECT database();</code></li>
+<li><code>status;</code></li>
+<li><code>show tables;</code> 查询结果第一行<code>table_in_xxx</code>，<code>xxx</code>就是当前数据库名</li>
+</ul>
+<h4 id="查看数据库版本"><a href="#查看数据库版本" class="headerlink" title="查看数据库版本"></a>查看数据库版本</h4><ul>
+<li><code>status;</code></li>
+<li><code>SELECT version();</code></li>
+</ul>
+<h4 id="查看当前登录用户"><a href="#查看当前登录用户" class="headerlink" title="查看当前登录用户"></a>查看当前登录用户</h4><p><code>SELECT user();</code></p>
+<h3 id="数据库表-增-删-改-查"><a href="#数据库表-增-删-改-查" class="headerlink" title="数据库表-增-删-改-查"></a>数据库表-增-删-改-查</h3><h4 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h4><p>数据表所需要的信息： 表名 / 表字段名 / 定义每个表字段<a href="http://www.runoob.com/mysql/mysql-data-types.html" target="_blank" rel="external">数据类型参考</a><br><code>CREATE TABLE TABLE_NAME (COLUMN_NAME COLUMN_TYPE,);</code><br>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">runoob_tbl(</div><div class="line">   runoob_id INT NOT NULL AUTO_INCREMENT,</div><div class="line">   runoob_title VARCHAR(100) NOT NULL,</div><div class="line">   runoob_author VARCHAR(40) NOT NULL,</div><div class="line">   submission_date DATE,</div><div class="line">   PRIMARY KEY ( runoob_id )</div><div class="line">)ENGINE=InnoDB DEFAULT CHARSET=utf8;</div></pre></td></tr></table></figure>
+<ul>
+<li>如果你不想字段为 <strong>NULL</strong> 可以设置字段的属性为 <strong>NOT NULL</strong>， 在操作数据库时如果输入该字段的数据为<strong>NULL</strong> ，就会报错。 </li>
+<li><strong>AUTO_INCREMENT</strong>定义列为自增的属性，一般用于主键，数值会自动加1。</li>
+<li><strong>PRIMARY KEY</strong>关键字用于定义列为主键。 您可以使用多列来定义主键，列间以逗号分隔。</li>
+<li><strong>ENGINE</strong> 设置存储引擎，<strong>CHARSET</strong> 设置编码。</li>
+</ul>
+<h4 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h4><p><code>drop TABLE TABLE_NAME;</code></p>
+<h4 id="改-插入数据表"><a href="#改-插入数据表" class="headerlink" title="改/插入数据表"></a>改/插入数据表</h4><p><code>INSERT INTO TABLE_NAME (COLUMN_1, COLUMN_2,...)  VALUES (VALUE_1, VALUE_2, ...);</code></p>
+<h4 id="查询数据库表"><a href="#查询数据库表" class="headerlink" title="查询数据库表"></a>查询数据库表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT column_1, column_2 FROM TABLE_NAME [WHERE]</div></pre></td></tr></table></figure>
+<ul>
+<li>查询语句中你可以使用一个或者多个表，表之间使用逗号(,)分割，并使用WHERE语句来设定查询条件。</li>
+<li><strong>SELECT</strong> 命令可以读取一条或者多条记录。</li>
+<li>可以使用星号（<strong> * </strong>）来代替其他字段，<strong>SELECT</strong>语句会返回表的所有字段数据。</li>
+<li>可以使用 <strong>WHERE</strong> 语句来包含任何条件。</li>
+<li>可以通过<strong>OFFSET</strong>指定<strong>SELECT</strong>语句开始查询的数据偏移量。默认情况下偏移量为0。</li>
+<li>可以使用 <strong>LIMIT</strong> 属性来设定返回的记录数。</li>
+</ul>
+<h4 id="查看全部的表名"><a href="#查看全部的表名" class="headerlink" title="查看全部的表名"></a>查看全部的表名</h4><p><code>SHOW TABLES;</code></p>
+<h4 id="查看全部数据表"><a href="#查看全部数据表" class="headerlink" title="查看全部数据表"></a>查看全部数据表</h4><p><code>SHOW COLUMNS FROM TABLE_NAME;</code></p>
+<h4 id="查看数据表的索引信息"><a href="#查看数据表的索引信息" class="headerlink" title="查看数据表的索引信息"></a>查看数据表的索引信息</h4><p><code>SHOW INDEX FROM TABLE_NAME;</code></p>
+<h4 id="WHERE字句"><a href="#WHERE字句" class="headerlink" title="WHERE字句"></a>WHERE字句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT field1, field2, field... FROM TABLE_NAME1, TABLE_NAME2, ... </div><div class="line">[WHERE condition1] [OR]/[AND] [WHERE condition2]...</div></pre></td></tr></table></figure>
+<ul>
+<li>查询语句中可以使用一个或者多个表，表之间使用逗号<code>,</code> 分割，并使用<strong>WHERE</strong>语句来设定查询条件。</li>
+<li>可以在 <strong>WHERE</strong> 子句中指定任何条件。</li>
+<li>可以使用 <strong>AND</strong> 或者 <strong>OR</strong> 指定一个或多个条件。</li>
+<li><strong>WHERE</strong> 子句也可以运用于 <strong>SQL</strong> 的 <strong>DELETE</strong> 或者 <strong>UPDATE</strong> 命令。</li>
+<li><strong>WHERE</strong>子句类似于程序语言中的 <code>if</code> 条件，根据 <strong>MySQL</strong> 表中的字段值来读取指定的数据。</li>
+<li><strong>WHERE <code>condition</code></strong>的 查询条件不区分大小写，可以使用<strong>WHERE BINARY <code>condition</code></strong>来区分大小写。</li>
+</ul>
+<h4 id="UPDATE查询"><a href="#UPDATE查询" class="headerlink" title="UPDATE查询"></a>UPDATE查询</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UPDATE TABLE_NAME SET field1=new_value, field2=new_value [WHERE condition]</div></pre></td></tr></table></figure>
+<ul>
+<li>可以同时更新一个或多个字段。</li>
+<li>可以在 <strong>WHERE</strong> 子句中指定任何条件。</li>
+<li>可以在一个单独表中同时更新数据。</li>
+</ul>
+<h4 id="DELETE字句"><a href="#DELETE字句" class="headerlink" title="DELETE字句"></a>DELETE字句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DELATE FROM TABLE_NAME [WHERE condition]</div></pre></td></tr></table></figure>
+<ul>
+<li>如果没有指定 <strong>WHERE</strong> 子句，<strong>MySQL</strong> 表中的所有记录将被删除。</li>
+<li>可以在 <strong>WHERE</strong> 子句中指定任何条件</li>
+<li>可以在单个表中一次性删除记录。</li>
+</ul>
+<h4 id="LIKE字句"><a href="#LIKE字句" class="headerlink" title="LIKE字句"></a>LIKE字句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT field1, field2, ... FROM TABLE_NAME1, TABLE_NAME2</div><div class="line">[WHERE field1 LIKE condition] [AND] [OR] [WHERE field2 = condition2]</div></pre></td></tr></table></figure>
+<ul>
+<li>可以在 <strong>WHERE</strong> 子句中指定任何条件。</li>
+<li>可以在 <strong>WHERE</strong> 子句中使用<strong>LIKE</strong>子句。</li>
+<li>可以使用<strong>LIKE</strong>子句代替等号 <code>=</code>。</li>
+<li><strong>LIKE</strong> 通常与 <code>%</code> 一同使用，类似于一个元字符的搜索。</li>
+<li>可以在 <strong>DELETE</strong> 或 <strong>UPDATE</strong> 命令中使用 <strong>WHERE…LIKE</strong> 子句来指定条件。</li>
+</ul>
+<h4 id="UNION"><a href="#UNION" class="headerlink" title="UNION"></a>UNION</h4><p><strong>UNION</strong> 操作符用于连接两个以上的 <strong>SELECT</strong> 语句的结果组合到一个结果集合中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SELECT expression1, expression2 FROM TABLE_NAME</div><div class="line">[WHERE condition]</div><div class="line">UNION [ALL | DISTINCT]</div><div class="line">SELECT expression1, expression2 FROM TABLE_NAME</div><div class="line">[WHERE condition]</div></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>expression1</strong>, <strong>expression2</strong>, <strong>… expression_n</strong>: 要检索的列。</li>
+<li><strong>DISTINCT</strong>: 可选，删除结果集中重复的数据。默认情况下 <strong>UNION </strong>操作符已经删除了重复数据，所以 <strong>DISTINCT</strong> 修饰符对结果没啥影响。</li>
+<li><strong>ALL</strong>: 可选，返回所有结果集，包含重复数据。</li>
+</ul>
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT field1. field2,... FROM TABLE_NAME1, TABLE_NAME2...</div><div class="line">ORDER BY field1, [field2, ...] [ASC | DESC]</div></pre></td></tr></table></figure>
+<ul>
+<li>可以使用任何字段来作为排序的条件，从而返回排序后的查询结果。</li>
+<li>可以设定多个字段来排序。</li>
+<li>可以使用 <strong>ASC</strong> 或 <strong>DESC</strong> 关键字来设置查询结果是按升序或降序排列。 默认情况下，它是按升序排列。</li>
+<li>可以添加 <strong>WHERE…LIKE</strong> 子句来设置条件。</li>
+</ul>
+<h4 id="GROUP-BY语句"><a href="#GROUP-BY语句" class="headerlink" title="GROUP BY语句"></a>GROUP BY语句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SELECT COLUMN_1, function(COLUMN_NAME) [as NEW_NAME]</div><div class="line">FROM TABLE_NAME</div><div class="line">WHERE COLUMN_NAME operator VALUE</div><div class="line">GROUP BY COLUMN_NAME</div><div class="line">[WITH ROLLUP];</div></pre></td></tr></table></figure>
+<ul>
+<li><code>function(COLUMN_NAME)</code>使用的函数。例：<code>（SUM,AVG,COUNT…）</code>。</li>
+<li><code>function(COLUMN_NAME)  [as NEW_NAME]</code> 将<strong>COLUMN_NAME</strong> 映射为新的名称<strong>NEW_NAME</strong>。</li>
+<li><strong>GROUP BY COLUMN_NAME1…</strong> 根据一个或多个列对结果集进行分组。</li>
+<li><strong>[WITH ROLLUP]</strong> 实现在分组统计数据基础上再进行相同的统计。</li>
+<li><code>select coalesce(a,b,c);</code> 如果<code>a==null</code>,则选择<code>b</code>；如果<code>b==null</code>,则选择<code>c</code>；如果<code>a!=null</code>,则选择<code>a</code>；如果<code>a b c</code>都为<code>null</code> ，则返回为<code>null</code>（没意义）。</li>
+</ul>
+<h3 id="连接的使用"><a href="#连接的使用" class="headerlink" title="连接的使用"></a>连接的使用</h3><p>在 <strong>SELECT</strong>, <strong>UPDATE</strong> 和 <strong>DELETE</strong> 语句中使用 <strong>Mysql</strong> 的 <strong>JOIN</strong> 来联合多表查询。</p>
+<ul>
+<li><strong>INNER JOIN (内连接或者等值连接)</strong>：获取两个表中字段匹配关系的记录。</li>
+<li><strong>LEFT JOIN（左连接）</strong>：获取左表所有记录，即使右表没有对应匹配的记录。</li>
+<li><strong>RIGHT JOIN （右连接）</strong>：获取右表所有记录，即使左表没有对应匹配的记录。<br><a href="http://www.runoob.com/mysql/mysql-join.html" target="_blank" rel="external">待完成…</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/koa2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MeetTheBest">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MeetTheBest">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/02/koa2/" itemprop="url">node学习之路-koa2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T11:30:21+08:00">
+                2017-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="node-bcrypt-数据加密"><a href="#node-bcrypt-数据加密" class="headerlink" title="node-bcrypt 数据加密"></a>node-bcrypt 数据加密</h3><p>安装<code>&amp;</code><a href="https://github.com/kelektiv/node.bcrypt.js" target="_blank" rel="external">Github地址</a></p>
+<p><code>yarn add bcryptjs 或者 npm install bcryptjs</code></p>
+<h4 id="api"><a href="#api" class="headerlink" title="api"></a>api</h4><ul>
+<li><code>genSaltSync(rounds)</code></li>
+<li><code>genSalt(rounds, cb)</code></li>
+<li><code>hashSync(data, salt)</code></li>
+<li><code>hash(data, salt, cb)</code></li>
+<li><code>compareSync(data, encrypted)</code></li>
+<li><code>compare(data, encrypted, cb)</code></li>
+<li><code>getRounds(encrypted)</code></li></ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/02/koa2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/set-ubuntu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1174,7 +1555,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1184,7 +1565,7 @@
             <div class="site-state-item site-state-categories"> 
               <!-- <a href="/categories/"> -->
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               <!-- </a> -->
               </a>
@@ -1195,7 +1576,7 @@
             <div class="site-state-item site-state-tags"> 
               <!-- <a href="/tags/"> -->
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               <!-- </a> -->
               </a>
