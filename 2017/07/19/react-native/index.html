@@ -91,23 +91,24 @@
 
 
 
-<meta name="description" content="声明本次react-native环境搭建是基于Ubuntu16.04,同系统不同版本可能有些出入 如需其他系统window,mac请参考中文官方文档  安装 安装react-native前,请自行安装对应的依赖环境  NodeYarn、React Native的命令行工具1npm install -g yarn react-native-cli">
+<meta name="description" content="声明本次react-native环境搭建是基于Ubuntu16.04,同系统不同版本可能有些出入 如需其他系统window,mac请参考中文官方文档  安装 安装react-native前,请自行安装对应的依赖环境  Node 安装地址Yarn 安装地址React Native的命令行工具123npm install -g react-native-cli或者yarn install -g re">
 <meta name="keywords" content="react-native,android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React-Native环境配置">
 <meta property="og:url" content="http://yoursite.com/2017/07/19/react-native/index.html">
 <meta property="og:site_name" content="MeetTheBest">
-<meta property="og:description" content="声明本次react-native环境搭建是基于Ubuntu16.04,同系统不同版本可能有些出入 如需其他系统window,mac请参考中文官方文档  安装 安装react-native前,请自行安装对应的依赖环境  NodeYarn、React Native的命令行工具1npm install -g yarn react-native-cli">
+<meta property="og:description" content="声明本次react-native环境搭建是基于Ubuntu16.04,同系统不同版本可能有些出入 如需其他系统window,mac请参考中文官方文档  安装 安装react-native前,请自行安装对应的依赖环境  Node 安装地址Yarn 安装地址React Native的命令行工具123npm install -g react-native-cli或者yarn install -g re">
 <meta property="og:image" content="http://yoursite.com/2017/07/19/react-native/notexist.png">
 <meta property="og:image" content="http://yoursite.com/2017/07/19/react-native/notfound.png">
 <meta property="og:image" content="http://yoursite.com/2017/07/19/react-native/notfile.png">
 <meta property="og:image" content="http://yoursite.com/2017/07/19/react-native/devtool.png">
 <meta property="og:image" content="http://yoursite.com/2017/07/19/react-native/dug.png">
 <meta property="og:image" content="http://yoursite.com/2017/07/19/react-native/setting.png">
-<meta property="og:updated_time" content="2017-08-02T06:12:06.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/07/19/react-native/serverErr.png">
+<meta property="og:updated_time" content="2017-08-10T03:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Native环境配置">
-<meta name="twitter:description" content="声明本次react-native环境搭建是基于Ubuntu16.04,同系统不同版本可能有些出入 如需其他系统window,mac请参考中文官方文档  安装 安装react-native前,请自行安装对应的依赖环境  NodeYarn、React Native的命令行工具1npm install -g yarn react-native-cli">
+<meta name="twitter:description" content="声明本次react-native环境搭建是基于Ubuntu16.04,同系统不同版本可能有些出入 如需其他系统window,mac请参考中文官方文档  安装 安装react-native前,请自行安装对应的依赖环境  Node 安装地址Yarn 安装地址React Native的命令行工具123npm install -g react-native-cli或者yarn install -g re">
 <meta name="twitter:image" content="http://yoursite.com/2017/07/19/react-native/notexist.png">
 
 
@@ -412,14 +413,17 @@
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
 <p>安装react-native前,请自行安装对应的依赖环境</p>
 </blockquote>
-<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><h4 id="Yarn、React-Native的命令行工具"><a href="#Yarn、React-Native的命令行工具" class="headerlink" title="Yarn、React Native的命令行工具"></a>Yarn、React Native的命令行工具</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g yarn react-native-cli</div></pre></td></tr></table></figure>
+<h4 id="Node-安装地址"><a href="#Node-安装地址" class="headerlink" title="Node 安装地址"></a>Node <a href="https://nodejs.org/en/" target="_blank" rel="external">安装地址</a></h4><h4 id="Yarn-安装地址"><a href="#Yarn-安装地址" class="headerlink" title="Yarn 安装地址"></a>Yarn <a href="https://yarnpkg.com/zh-Hans/docs/install" target="_blank" rel="external">安装地址</a></h4><h4 id="React-Native的命令行工具"><a href="#React-Native的命令行工具" class="headerlink" title="React Native的命令行工具"></a>React Native的命令行工具</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install -g react-native-cli</div><div class="line">或者</div><div class="line">yarn install -g react-native-cli</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h4 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h4><p>React Native目前需要Android Studio2.0或更高版本。</p>
-<h3 id="ANDROID-HOME环境变量"><a href="#ANDROID-HOME环境变量" class="headerlink" title="ANDROID_HOME环境变量"></a>ANDROID_HOME环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export ANDROID_HOME=~/path/Android/sdk</div></pre></td></tr></table></figure>
+<h4 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h4><p>React Native目前需要<a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">Android Studio2.0</a>或更高版本。</p>
+<blockquote>
+<p>后续需要安装对应的SDK <a href="http://reactnative.cn/docs/0.47/getting-started.html#android-studio" target="_blank" rel="external">参考路径</a></p>
+</blockquote>
+<h3 id="ANDROID-HOME环境变量"><a href="#ANDROID-HOME环境变量" class="headerlink" title="ANDROID_HOME环境变量"></a>ANDROID_HOME环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export ANDROID_HOME=path/Android/Sdk</div></pre></td></tr></table></figure>
 <blockquote>
 <p>这里由<code>Android Studio</code>自己下载的<code>Android/Sdk</code>目录,<code>S</code>为大写字母</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div><div class="line">或者</div><div class="line">source ~/.bashrc</div></pre></td></tr></table></figure>
+<p>然后使用下列命令使其立即生效（否则重启后才生效）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div><div class="line">或者</div><div class="line">source ~/.bashrc</div></pre></td></tr></table></figure></p>
 <h3 id="推荐安装的工具"><a href="#推荐安装的工具" class="headerlink" title="推荐安装的工具"></a>推荐安装的工具</h3><h4 id="Watchman"><a href="#Watchman" class="headerlink" title="Watchman"></a>Watchman</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/facebook/watchman.git</div><div class="line">cd watchman</div><div class="line">git checkout v4.7.0  # 这是本文发布时的最新版本</div><div class="line">./autogen.sh</div><div class="line">./configure</div><div class="line">make</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
 <p><code>./autogen.sh: 4: autoreconf: not found</code></p>
 <p>是在不同版本的<code>tslib</code>下执行<code>autogen.sh</code>产生,它们产生的原因一样,是因为没有安装<code>automake</code>工具,<br>(ubuntu 8.04)用下面的命令安装好就可以了</p>
@@ -433,8 +437,9 @@
 </ol>
 <p>配置<code>Genymotion</code></p>
 <ol>
-<li></li>
+<li>登录在genymotion上注册的账号密码</li>
 <li>切换到ADB下,选择<code>Usb custom Android SDK tools</code>, 选择你SDK的路径即可</li>
+<li>如需切换到中文操作界面<a href="http://jingyan.baidu.com/article/cdddd41c86645953cb00e1f3.html" target="_blank" rel="external">参考路径</a></li>
 </ol>
 <h3 id="测试安装"><a href="#测试安装" class="headerlink" title="测试安装"></a>测试安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">react-native init hello</div><div class="line">cd hello</div><div class="line">react-native run-android</div></pre></td></tr></table></figure>
 <ul>
@@ -446,22 +451,21 @@
 <li>不存在对象的SDK目录</li>
 </ul>
 <p><img src="/2017/07/19/react-native/notfound.png" alt="不存在对象的SDK目录"></p>
-<p>解决:</p>
-<ol>
-<li>可能你设置的环境变量时,没有注意目录大小写,可以重新设置一次</li>
-</ol>
+<p>解决:<br>  SDK的目录不存在,需要设置环境变量,注意目录大小写</p>
 <ul>
 <li>java.io.IOException: Cannot run program…</li>
 </ul>
 <p><img src="/2017/07/19/react-native/notfile.png" alt="java.io.IOException报错"></p>
 <p>原因是，我是64位的系统，系统缺少32位的相关依赖库<br>打开终端依次运行以下命令，重新编译就可以了</p>
 <p>解决:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo dpkg --add-architecture i386  </div><div class="line">sudo apt-get update  </div><div class="line">sudo apt-get install libncurses5:i386 libstdc++6:i386 zlib1g:i386</div></pre></td></tr></table></figure></p>
-<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><h4 id="热加载"><a href="#热加载" class="headerlink" title="热加载"></a>热加载</h4><p><code>android</code>下打开开发者菜单或者<code>ctrl+m</code>,如下图</p>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><h4 id="热加载-amp-远程调试"><a href="#热加载-amp-远程调试" class="headerlink" title="热加载&amp;远程调试"></a>热加载&amp;远程调试</h4><p><code>android</code>下打开开发者菜单或者<code>ctrl+m</code>,如下图</p>
 <p><img src="/2017/07/19/react-native/devtool.png" alt="开发者菜单"></p>
 <p>在对应的选项中将<code>Hot Reloading</code>项开启</p>
+<p>在浏览器地址栏中输入<code>http://localhost:8081/debugger-ui</code></p>
+<p>在对应的选项中将<code>remote to debug</code>项开启</p>
 <h4 id="React-Developer-Tools"><a href="#React-Developer-Tools" class="headerlink" title="React Developer Tools"></a><a href="https://github.com/facebook/react-devtools/tree/master/packages/react-devtools" target="_blank" rel="external">React Developer Tools</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g react-devtools</div></pre></td></tr></table></figure>
 <blockquote>
-<p>react-devtools依赖于electron，而electron需要到国外服务器下载二进制包，所以国内用户这一步很可能会卡住。此时请在环境变量中添加electron专用的国内镜像源：ELECTRON_MIRROR=”<a href="https://npm.taobao.org/mirrors/electron/&quot;，然后再尝试安装react-devtools" target="_blank" rel="external">https://npm.taobao.org/mirrors/electron/&quot;，然后再尝试安装react-devtools</a></p>
+<p>react-devtools依赖于electron，而electron需要到国外服务器下载二进制包，所以国内用户这一步很可能会卡住。此时请在环境变量中添加electron专用的国内镜像源:ELECTRON_MIRROR=”<a href="https://npm.taobao.org/mirrors/electron/&quot;，然后再尝试安装react-devtools" target="_blank" rel="external">https://npm.taobao.org/mirrors/electron/&quot;，然后再尝试安装react-devtools</a></p>
 </blockquote>
 <p>安装完成后在命令行中执行react-devtools即可启动此工具：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-devtools</div></pre></td></tr></table></figure>
@@ -474,7 +478,12 @@
 <p><img src="/2017/07/19/react-native/dug.png" alt="Debug JS Remotyle"></p>
 <p>如果没有请将<code>top</code>调至<code>debuggerWorker.js</code></p>
 <p><img src="/2017/07/19/react-native/setting.png" alt="debuggerWorker"></p>
-<h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><ul>
+<h3 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h3><ul>
+<li>没有启动后台<code>react-Native</code>服务</li>
+</ul>
+<p><img src="/2017/07/19/react-native/serverErr.png" alt="没有启动后台服务"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native start</div></pre></td></tr></table></figure>
+<ul>
 <li><p><code>Application xxx has not been registered.</code></p>
 <p>原因是一个项目在多个终端打开</p>
 </li>
@@ -708,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Node"><span class="nav-number">1.1.</span> <span class="nav-text">Node</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Yarn、React-Native的命令行工具"><span class="nav-number">1.2.</span> <span class="nav-text">Yarn、React Native的命令行工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-Studio"><span class="nav-number">1.3.</span> <span class="nav-text">Android Studio</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ANDROID-HOME环境变量"><span class="nav-number">2.</span> <span class="nav-text">ANDROID_HOME环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐安装的工具"><span class="nav-number">3.</span> <span class="nav-text">推荐安装的工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Watchman"><span class="nav-number">3.1.</span> <span class="nav-text">Watchman</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可选的安装项"><span class="nav-number">4.</span> <span class="nav-text">可选的安装项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Genymotion"><span class="nav-number">4.1.</span> <span class="nav-text">Genymotion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试安装"><span class="nav-number">5.</span> <span class="nav-text">测试安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调试"><span class="nav-number">6.</span> <span class="nav-text">调试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#热加载"><span class="nav-number">6.1.</span> <span class="nav-text">热加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-Developer-Tools"><span class="nav-number">6.2.</span> <span class="nav-text">React Developer Tools</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报错"><span class="nav-number">7.</span> <span class="nav-text">报错</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Node-安装地址"><span class="nav-number">1.1.</span> <span class="nav-text">Node 安装地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Yarn-安装地址"><span class="nav-number">1.2.</span> <span class="nav-text">Yarn 安装地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-Native的命令行工具"><span class="nav-number">1.3.</span> <span class="nav-text">React Native的命令行工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-Studio"><span class="nav-number">1.4.</span> <span class="nav-text">Android Studio</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ANDROID-HOME环境变量"><span class="nav-number">2.</span> <span class="nav-text">ANDROID_HOME环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐安装的工具"><span class="nav-number">3.</span> <span class="nav-text">推荐安装的工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Watchman"><span class="nav-number">3.1.</span> <span class="nav-text">Watchman</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可选的安装项"><span class="nav-number">4.</span> <span class="nav-text">可选的安装项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Genymotion"><span class="nav-number">4.1.</span> <span class="nav-text">Genymotion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试安装"><span class="nav-number">5.</span> <span class="nav-text">测试安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调试"><span class="nav-number">6.</span> <span class="nav-text">调试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#热加载-amp-远程调试"><span class="nav-number">6.1.</span> <span class="nav-text">热加载&远程调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-Developer-Tools"><span class="nav-number">6.2.</span> <span class="nav-text">React Developer Tools</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见报错"><span class="nav-number">7.</span> <span class="nav-text">常见报错</span></a></li></ol></div>
             
 
           </div>
