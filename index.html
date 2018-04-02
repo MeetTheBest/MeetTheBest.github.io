@@ -404,6 +404,50 @@
           
             <h3 id="git版本回退"><a href="#git版本回退" class="headerlink" title="git版本回退"></a>git版本回退</h3><p><code>git reset --hard &lt;common-id&gt;</code></p>
 <h3 id="git本地分支强制覆盖远程分支"><a href="#git本地分支强制覆盖远程分支" class="headerlink" title="git本地分支强制覆盖远程分支"></a>git本地分支强制覆盖远程分支</h3><p><code>git push -f &lt;origin&gt; &lt;branch&gt;</code></p>
+<h3 id="git-stash-使用"><a href="#git-stash-使用" class="headerlink" title="git stash 使用"></a>git stash 使用</h3><ol>
+<li>暂存stash</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git stash</div><div class="line">git stash save &lt;message&gt;  // 推荐使用</div></pre></td></tr></table></figure>
+<blockquote>
+<p>将当前修改暂存到stash中, message可用去记录版本</p>
+</blockquote>
+<ol>
+<li>查看所有stash</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash list</div></pre></td></tr></table></figure>
+<ol>
+<li>提取stash</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git stash pop</div><div class="line">git stash apply stash@&#123;index&#125; // 不删除原记录</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>git stash pop</code>将获取暂存中的第一条记录</p>
+<p><code>git stash apply stash@{index}</code>获取暂存中对应索引的暂存记录</p>
+</blockquote>
+<ol>
+<li>移除stash</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git stash drop stash@&#123;index&#125;</div><div class="line">git stash clear</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>git stash drop stash@{index}</code>删除指定索引的记录</p>
+<p><code>git stash clear</code> 删除所有<code>stash</code>记录</p>
+</blockquote>
+<ol>
+<li>查看对应stash修改信息</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git stash show</div><div class="line">git stash show -p || --patch</div><div class="line">git satsh show stash@&#123;index&#125; -p || --patch</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>git stash show</code> 查看最近一条记录的暂存文件</p>
+<p><code>git stash show -p</code> 查看最近一条记录的暂存文件的修改内容</p>
+<p><code>git stash show stash@{index} -p</code> 查看指定记录的暂存文件的修改内容</p>
+</blockquote>
+<ol>
+<li>从stash检出分支</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git stash branch &lt;branch-name&gt;</div><div class="line">git stash branch &lt;branch-name&gt; [&lt;stash@&#123;index&#125;&gt;]</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>git stash branch &lt;branch-name&gt;</code> 从当前暂存的记录下,检出新的分支,暂存记录将被删除</p>
+<p><code>git stash branch &lt;branch-name&gt; [&lt;stash@{index}&gt;]</code> 从指定索引的暂存记录,检出新的分支,暂存记录将被删除</p>
+</blockquote>
 
           
         
